@@ -99,3 +99,16 @@ ENV/
 
 # mypy
 .mypy_cache/
+.ipynb_checkpoints
+.idea/
+.floydignore
+checkpoint
+cifar-10-python.tar.gz
+cifar-10-batches-py
+image_classification.data-*
+image_classification.index
+image_classification.meta
+preprocess_batch_*.p
+preprocess_training.p
+preprocess_validation.p
+preprocess_test.p
