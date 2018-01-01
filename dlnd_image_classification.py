@@ -247,14 +247,10 @@ def conv_net(x, keep_prob):
     #    Play around with different number of outputs
     # Function Definition from Above:
     num_outputs = 10
-    fully_conn_layer = fully_conn(flatten_layer, num_outputs)
+    fully_conn_layer = fully_conn(flatten_layer, 1000)
     fully_conn_layer = tf.nn.dropout(fully_conn_layer, keep_prob)
 
     # TODO: Apply an Output Layer
-    #    Set this to the number of classes
-    # Function Definition from Above:
-    #   output(x_tensor, num_outputs)
-    # TODO: return output
     return output(fully_conn_layer, num_outputs)
 
 
@@ -328,7 +324,7 @@ def print_stats(session, feature_batch, label_batch, cost, accuracy):
 # TODO: Tune Parameters
 epochs = 30
 batch_size = 512
-keep_probability = 0.08
+keep_probability = 0.8
 
 """
 DON'T MODIFY ANYTHING IN THIS CELL

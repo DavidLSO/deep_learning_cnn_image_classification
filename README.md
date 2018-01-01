@@ -432,7 +432,7 @@ def conv_net(x, keep_prob):
     #    Play around with different number of outputs
     # Function Definition from Above:
     num_outputs = 10
-    fully_conn_layer = fully_conn(flatten_layer, num_outputs)
+    fully_conn_layer = fully_conn(flatten_layer, 1000)
     fully_conn_layer = tf.nn.dropout(fully_conn_layer, keep_prob)
     
     # TODO: Apply an Output Layer
@@ -550,7 +550,7 @@ Tune the following parameters:
 # TODO: Tune Parameters
 epochs = 30
 batch_size = 512
-keep_probability = 0.08
+keep_probability = 0.8
 ```
 
 ### Train on a Single CIFAR-10 Batch
@@ -576,36 +576,36 @@ with tf.Session() as sess:
 ```
 
     Checking the Training on a Single Batch...
-    Epoch  1, CIFAR-10 Batch 1:  Loss:     2.3024 Accuracy: 0.105000
-    Epoch  2, CIFAR-10 Batch 1:  Loss:     2.3024 Accuracy: 0.105000
-    Epoch  3, CIFAR-10 Batch 1:  Loss:     2.3024 Accuracy: 0.105000
-    Epoch  4, CIFAR-10 Batch 1:  Loss:     2.3024 Accuracy: 0.105000
-    Epoch  5, CIFAR-10 Batch 1:  Loss:     2.3025 Accuracy: 0.105000
-    Epoch  6, CIFAR-10 Batch 1:  Loss:     2.3025 Accuracy: 0.105000
-    Epoch  7, CIFAR-10 Batch 1:  Loss:     2.3025 Accuracy: 0.105000
-    Epoch  8, CIFAR-10 Batch 1:  Loss:     2.3025 Accuracy: 0.105000
-    Epoch  9, CIFAR-10 Batch 1:  Loss:     2.3025 Accuracy: 0.105000
-    Epoch 10, CIFAR-10 Batch 1:  Loss:     2.3026 Accuracy: 0.105000
-    Epoch 11, CIFAR-10 Batch 1:  Loss:     2.3026 Accuracy: 0.105000
-    Epoch 12, CIFAR-10 Batch 1:  Loss:     2.3026 Accuracy: 0.105000
-    Epoch 13, CIFAR-10 Batch 1:  Loss:     2.3026 Accuracy: 0.105000
-    Epoch 14, CIFAR-10 Batch 1:  Loss:     2.3026 Accuracy: 0.105000
-    Epoch 15, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 16, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 17, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 18, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 19, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 20, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 21, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 22, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 23, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 24, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 25, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 26, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 27, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 28, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 29, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch 30, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
+    Epoch  1, CIFAR-10 Batch 1:  Loss:     4.2471 Accuracy: 0.210000
+    Epoch  2, CIFAR-10 Batch 1:  Loss:     2.0152 Accuracy: 0.293200
+    Epoch  3, CIFAR-10 Batch 1:  Loss:     1.8660 Accuracy: 0.363200
+    Epoch  4, CIFAR-10 Batch 1:  Loss:     1.7256 Accuracy: 0.399600
+    Epoch  5, CIFAR-10 Batch 1:  Loss:     1.6314 Accuracy: 0.422400
+    Epoch  6, CIFAR-10 Batch 1:  Loss:     1.5434 Accuracy: 0.442600
+    Epoch  7, CIFAR-10 Batch 1:  Loss:     1.4608 Accuracy: 0.460400
+    Epoch  8, CIFAR-10 Batch 1:  Loss:     1.3799 Accuracy: 0.478800
+    Epoch  9, CIFAR-10 Batch 1:  Loss:     1.2976 Accuracy: 0.492600
+    Epoch 10, CIFAR-10 Batch 1:  Loss:     1.2198 Accuracy: 0.506200
+    Epoch 11, CIFAR-10 Batch 1:  Loss:     1.1562 Accuracy: 0.511600
+    Epoch 12, CIFAR-10 Batch 1:  Loss:     1.1068 Accuracy: 0.518000
+    Epoch 13, CIFAR-10 Batch 1:  Loss:     1.0565 Accuracy: 0.524400
+    Epoch 14, CIFAR-10 Batch 1:  Loss:     1.0012 Accuracy: 0.530600
+    Epoch 15, CIFAR-10 Batch 1:  Loss:     0.9613 Accuracy: 0.539000
+    Epoch 16, CIFAR-10 Batch 1:  Loss:     0.9136 Accuracy: 0.547200
+    Epoch 17, CIFAR-10 Batch 1:  Loss:     0.8769 Accuracy: 0.545800
+    Epoch 18, CIFAR-10 Batch 1:  Loss:     0.8420 Accuracy: 0.550200
+    Epoch 19, CIFAR-10 Batch 1:  Loss:     0.8082 Accuracy: 0.546800
+    Epoch 20, CIFAR-10 Batch 1:  Loss:     0.7668 Accuracy: 0.553400
+    Epoch 21, CIFAR-10 Batch 1:  Loss:     0.7456 Accuracy: 0.558000
+    Epoch 22, CIFAR-10 Batch 1:  Loss:     0.7081 Accuracy: 0.559000
+    Epoch 23, CIFAR-10 Batch 1:  Loss:     0.6813 Accuracy: 0.552200
+    Epoch 24, CIFAR-10 Batch 1:  Loss:     0.6578 Accuracy: 0.559800
+    Epoch 25, CIFAR-10 Batch 1:  Loss:     0.6429 Accuracy: 0.562800
+    Epoch 26, CIFAR-10 Batch 1:  Loss:     0.6207 Accuracy: 0.564000
+    Epoch 27, CIFAR-10 Batch 1:  Loss:     0.5977 Accuracy: 0.560200
+    Epoch 28, CIFAR-10 Batch 1:  Loss:     0.5704 Accuracy: 0.564800
+    Epoch 29, CIFAR-10 Batch 1:  Loss:     0.5648 Accuracy: 0.559600
+    Epoch 30, CIFAR-10 Batch 1:  Loss:     0.5363 Accuracy: 0.562800
     
 
 ### Fully Train the Model
@@ -639,156 +639,156 @@ with tf.Session() as sess:
 ```
 
     Training...
-    Epoch  1, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.105000
-    Epoch  1, CIFAR-10 Batch 2:  Loss:     2.3027 Accuracy: 0.099800
-    Epoch  1, CIFAR-10 Batch 3:  Loss:     2.3031 Accuracy: 0.099800
-    Epoch  1, CIFAR-10 Batch 4:  Loss:     2.3024 Accuracy: 0.099800
-    Epoch  1, CIFAR-10 Batch 5:  Loss:     2.3023 Accuracy: 0.094600
-    Epoch  2, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094600
-    Epoch  2, CIFAR-10 Batch 2:  Loss:     2.3025 Accuracy: 0.094600
-    Epoch  2, CIFAR-10 Batch 3:  Loss:     2.3027 Accuracy: 0.099800
-    Epoch  2, CIFAR-10 Batch 4:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  2, CIFAR-10 Batch 5:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch  3, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094600
-    Epoch  3, CIFAR-10 Batch 2:  Loss:     2.3024 Accuracy: 0.094600
-    Epoch  3, CIFAR-10 Batch 3:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch  3, CIFAR-10 Batch 4:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  3, CIFAR-10 Batch 5:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch  4, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch  4, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094600
-    Epoch  4, CIFAR-10 Batch 3:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  4, CIFAR-10 Batch 4:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  4, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  5, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch  5, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094600
-    Epoch  5, CIFAR-10 Batch 3:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  5, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch  5, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  6, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch  6, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094600
-    Epoch  6, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch  6, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch  6, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  7, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch  7, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch  7, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch  7, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch  7, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  8, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch  8, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch  8, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch  8, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch  8, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch  9, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch  9, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch  9, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch  9, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch  9, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 10, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 10, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 10, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 10, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 10, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 11, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 11, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 11, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 11, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 11, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 12, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 12, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 12, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 12, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 12, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 13, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 13, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 13, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 13, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 13, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 14, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 14, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 14, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 14, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 14, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 15, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 15, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 15, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 15, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 15, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 16, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 16, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 16, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 16, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 16, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 17, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 17, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 17, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 17, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 17, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 18, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 18, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 18, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 18, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 18, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 19, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 19, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 19, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 19, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 19, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 20, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 20, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 20, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 20, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 20, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 21, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 21, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 21, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 21, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 21, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 22, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 22, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 22, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 22, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 22, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 23, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 23, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 23, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 23, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 23, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 24, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 24, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 24, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 24, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 24, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 25, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 25, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 25, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 25, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 25, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 26, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 26, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 26, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 26, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 26, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 27, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 27, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 27, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 27, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 27, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 28, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 28, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 28, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 28, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 28, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 29, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 29, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 29, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 29, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 29, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
-    Epoch 30, CIFAR-10 Batch 1:  Loss:     2.3027 Accuracy: 0.094200
-    Epoch 30, CIFAR-10 Batch 2:  Loss:     2.3023 Accuracy: 0.094200
-    Epoch 30, CIFAR-10 Batch 3:  Loss:     2.3024 Accuracy: 0.094200
-    Epoch 30, CIFAR-10 Batch 4:  Loss:     2.3026 Accuracy: 0.094200
-    Epoch 30, CIFAR-10 Batch 5:  Loss:     2.3025 Accuracy: 0.094200
+    Epoch  1, CIFAR-10 Batch 1:  Loss:     6.5434 Accuracy: 0.127200
+    Epoch  1, CIFAR-10 Batch 2:  Loss:     1.9689 Accuracy: 0.246000
+    Epoch  1, CIFAR-10 Batch 3:  Loss:     1.7488 Accuracy: 0.350000
+    Epoch  1, CIFAR-10 Batch 4:  Loss:     1.6143 Accuracy: 0.406600
+    Epoch  1, CIFAR-10 Batch 5:  Loss:     1.6596 Accuracy: 0.424400
+    Epoch  2, CIFAR-10 Batch 1:  Loss:     1.6434 Accuracy: 0.442800
+    Epoch  2, CIFAR-10 Batch 2:  Loss:     1.4792 Accuracy: 0.463800
+    Epoch  2, CIFAR-10 Batch 3:  Loss:     1.3479 Accuracy: 0.476000
+    Epoch  2, CIFAR-10 Batch 4:  Loss:     1.3143 Accuracy: 0.492000
+    Epoch  2, CIFAR-10 Batch 5:  Loss:     1.4050 Accuracy: 0.507800
+    Epoch  3, CIFAR-10 Batch 1:  Loss:     1.3846 Accuracy: 0.515200
+    Epoch  3, CIFAR-10 Batch 2:  Loss:     1.2881 Accuracy: 0.510400
+    Epoch  3, CIFAR-10 Batch 3:  Loss:     1.1859 Accuracy: 0.518400
+    Epoch  3, CIFAR-10 Batch 4:  Loss:     1.1446 Accuracy: 0.532000
+    Epoch  3, CIFAR-10 Batch 5:  Loss:     1.2411 Accuracy: 0.530400
+    Epoch  4, CIFAR-10 Batch 1:  Loss:     1.2600 Accuracy: 0.550400
+    Epoch  4, CIFAR-10 Batch 2:  Loss:     1.1957 Accuracy: 0.535000
+    Epoch  4, CIFAR-10 Batch 3:  Loss:     1.1022 Accuracy: 0.543200
+    Epoch  4, CIFAR-10 Batch 4:  Loss:     1.0442 Accuracy: 0.563200
+    Epoch  4, CIFAR-10 Batch 5:  Loss:     1.1387 Accuracy: 0.560600
+    Epoch  5, CIFAR-10 Batch 1:  Loss:     1.1763 Accuracy: 0.576400
+    Epoch  5, CIFAR-10 Batch 2:  Loss:     1.1229 Accuracy: 0.552800
+    Epoch  5, CIFAR-10 Batch 3:  Loss:     1.0440 Accuracy: 0.571800
+    Epoch  5, CIFAR-10 Batch 4:  Loss:     0.9700 Accuracy: 0.574000
+    Epoch  5, CIFAR-10 Batch 5:  Loss:     1.0512 Accuracy: 0.588600
+    Epoch  6, CIFAR-10 Batch 1:  Loss:     1.1002 Accuracy: 0.585200
+    Epoch  6, CIFAR-10 Batch 2:  Loss:     1.0845 Accuracy: 0.572600
+    Epoch  6, CIFAR-10 Batch 3:  Loss:     0.9780 Accuracy: 0.586800
+    Epoch  6, CIFAR-10 Batch 4:  Loss:     0.9188 Accuracy: 0.591200
+    Epoch  6, CIFAR-10 Batch 5:  Loss:     1.0008 Accuracy: 0.586600
+    Epoch  7, CIFAR-10 Batch 1:  Loss:     1.0359 Accuracy: 0.594600
+    Epoch  7, CIFAR-10 Batch 2:  Loss:     0.9879 Accuracy: 0.582400
+    Epoch  7, CIFAR-10 Batch 3:  Loss:     0.8888 Accuracy: 0.599400
+    Epoch  7, CIFAR-10 Batch 4:  Loss:     0.8726 Accuracy: 0.604600
+    Epoch  7, CIFAR-10 Batch 5:  Loss:     0.9699 Accuracy: 0.591400
+    Epoch  8, CIFAR-10 Batch 1:  Loss:     0.9915 Accuracy: 0.600600
+    Epoch  8, CIFAR-10 Batch 2:  Loss:     0.9699 Accuracy: 0.588800
+    Epoch  8, CIFAR-10 Batch 3:  Loss:     0.8911 Accuracy: 0.599000
+    Epoch  8, CIFAR-10 Batch 4:  Loss:     0.8341 Accuracy: 0.601800
+    Epoch  8, CIFAR-10 Batch 5:  Loss:     0.9102 Accuracy: 0.601800
+    Epoch  9, CIFAR-10 Batch 1:  Loss:     0.9653 Accuracy: 0.604400
+    Epoch  9, CIFAR-10 Batch 2:  Loss:     0.9526 Accuracy: 0.585400
+    Epoch  9, CIFAR-10 Batch 3:  Loss:     0.8421 Accuracy: 0.605800
+    Epoch  9, CIFAR-10 Batch 4:  Loss:     0.8111 Accuracy: 0.609800
+    Epoch  9, CIFAR-10 Batch 5:  Loss:     0.8676 Accuracy: 0.610200
+    Epoch 10, CIFAR-10 Batch 1:  Loss:     0.9324 Accuracy: 0.603000
+    Epoch 10, CIFAR-10 Batch 2:  Loss:     0.9186 Accuracy: 0.602200
+    Epoch 10, CIFAR-10 Batch 3:  Loss:     0.7992 Accuracy: 0.615200
+    Epoch 10, CIFAR-10 Batch 4:  Loss:     0.7814 Accuracy: 0.609600
+    Epoch 10, CIFAR-10 Batch 5:  Loss:     0.8583 Accuracy: 0.608000
+    Epoch 11, CIFAR-10 Batch 1:  Loss:     0.8907 Accuracy: 0.619600
+    Epoch 11, CIFAR-10 Batch 2:  Loss:     0.8784 Accuracy: 0.600400
+    Epoch 11, CIFAR-10 Batch 3:  Loss:     0.7809 Accuracy: 0.616800
+    Epoch 11, CIFAR-10 Batch 4:  Loss:     0.7268 Accuracy: 0.621600
+    Epoch 11, CIFAR-10 Batch 5:  Loss:     0.7851 Accuracy: 0.625200
+    Epoch 12, CIFAR-10 Batch 1:  Loss:     0.8648 Accuracy: 0.626600
+    Epoch 12, CIFAR-10 Batch 2:  Loss:     0.8447 Accuracy: 0.605000
+    Epoch 12, CIFAR-10 Batch 3:  Loss:     0.7586 Accuracy: 0.617000
+    Epoch 12, CIFAR-10 Batch 4:  Loss:     0.7448 Accuracy: 0.617000
+    Epoch 12, CIFAR-10 Batch 5:  Loss:     0.7878 Accuracy: 0.624200
+    Epoch 13, CIFAR-10 Batch 1:  Loss:     0.8448 Accuracy: 0.630600
+    Epoch 13, CIFAR-10 Batch 2:  Loss:     0.8201 Accuracy: 0.601200
+    Epoch 13, CIFAR-10 Batch 3:  Loss:     0.7377 Accuracy: 0.623000
+    Epoch 13, CIFAR-10 Batch 4:  Loss:     0.7213 Accuracy: 0.614800
+    Epoch 13, CIFAR-10 Batch 5:  Loss:     0.7710 Accuracy: 0.628400
+    Epoch 14, CIFAR-10 Batch 1:  Loss:     0.8338 Accuracy: 0.629000
+    Epoch 14, CIFAR-10 Batch 2:  Loss:     0.8110 Accuracy: 0.602800
+    Epoch 14, CIFAR-10 Batch 3:  Loss:     0.7199 Accuracy: 0.624200
+    Epoch 14, CIFAR-10 Batch 4:  Loss:     0.6573 Accuracy: 0.637800
+    Epoch 14, CIFAR-10 Batch 5:  Loss:     0.7278 Accuracy: 0.635200
+    Epoch 15, CIFAR-10 Batch 1:  Loss:     0.7864 Accuracy: 0.629400
+    Epoch 15, CIFAR-10 Batch 2:  Loss:     0.7768 Accuracy: 0.600000
+    Epoch 15, CIFAR-10 Batch 3:  Loss:     0.6791 Accuracy: 0.633800
+    Epoch 15, CIFAR-10 Batch 4:  Loss:     0.6481 Accuracy: 0.630600
+    Epoch 15, CIFAR-10 Batch 5:  Loss:     0.7010 Accuracy: 0.633200
+    Epoch 16, CIFAR-10 Batch 1:  Loss:     0.7673 Accuracy: 0.641000
+    Epoch 16, CIFAR-10 Batch 2:  Loss:     0.7708 Accuracy: 0.597600
+    Epoch 16, CIFAR-10 Batch 3:  Loss:     0.6924 Accuracy: 0.622600
+    Epoch 16, CIFAR-10 Batch 4:  Loss:     0.6782 Accuracy: 0.623600
+    Epoch 16, CIFAR-10 Batch 5:  Loss:     0.7311 Accuracy: 0.627400
+    Epoch 17, CIFAR-10 Batch 1:  Loss:     0.7712 Accuracy: 0.622000
+    Epoch 17, CIFAR-10 Batch 2:  Loss:     0.7277 Accuracy: 0.606000
+    Epoch 17, CIFAR-10 Batch 3:  Loss:     0.6568 Accuracy: 0.630400
+    Epoch 17, CIFAR-10 Batch 4:  Loss:     0.6275 Accuracy: 0.635600
+    Epoch 17, CIFAR-10 Batch 5:  Loss:     0.6568 Accuracy: 0.635800
+    Epoch 18, CIFAR-10 Batch 1:  Loss:     0.7605 Accuracy: 0.631000
+    Epoch 18, CIFAR-10 Batch 2:  Loss:     0.7214 Accuracy: 0.601000
+    Epoch 18, CIFAR-10 Batch 3:  Loss:     0.6424 Accuracy: 0.635200
+    Epoch 18, CIFAR-10 Batch 4:  Loss:     0.6219 Accuracy: 0.636200
+    Epoch 18, CIFAR-10 Batch 5:  Loss:     0.6258 Accuracy: 0.643200
+    Epoch 19, CIFAR-10 Batch 1:  Loss:     0.7212 Accuracy: 0.632800
+    Epoch 19, CIFAR-10 Batch 2:  Loss:     0.7284 Accuracy: 0.596200
+    Epoch 19, CIFAR-10 Batch 3:  Loss:     0.6236 Accuracy: 0.636000
+    Epoch 19, CIFAR-10 Batch 4:  Loss:     0.6041 Accuracy: 0.636600
+    Epoch 19, CIFAR-10 Batch 5:  Loss:     0.6318 Accuracy: 0.640200
+    Epoch 20, CIFAR-10 Batch 1:  Loss:     0.7188 Accuracy: 0.637800
+    Epoch 20, CIFAR-10 Batch 2:  Loss:     0.6761 Accuracy: 0.612400
+    Epoch 20, CIFAR-10 Batch 3:  Loss:     0.6294 Accuracy: 0.636800
+    Epoch 20, CIFAR-10 Batch 4:  Loss:     0.5708 Accuracy: 0.635600
+    Epoch 20, CIFAR-10 Batch 5:  Loss:     0.6210 Accuracy: 0.631800
+    Epoch 21, CIFAR-10 Batch 1:  Loss:     0.6969 Accuracy: 0.644600
+    Epoch 21, CIFAR-10 Batch 2:  Loss:     0.6530 Accuracy: 0.619400
+    Epoch 21, CIFAR-10 Batch 3:  Loss:     0.5840 Accuracy: 0.635400
+    Epoch 21, CIFAR-10 Batch 4:  Loss:     0.5626 Accuracy: 0.640800
+    Epoch 21, CIFAR-10 Batch 5:  Loss:     0.6005 Accuracy: 0.642000
+    Epoch 22, CIFAR-10 Batch 1:  Loss:     0.6888 Accuracy: 0.631200
+    Epoch 22, CIFAR-10 Batch 2:  Loss:     0.6646 Accuracy: 0.624800
+    Epoch 22, CIFAR-10 Batch 3:  Loss:     0.6013 Accuracy: 0.636200
+    Epoch 22, CIFAR-10 Batch 4:  Loss:     0.5542 Accuracy: 0.636400
+    Epoch 22, CIFAR-10 Batch 5:  Loss:     0.5973 Accuracy: 0.635600
+    Epoch 23, CIFAR-10 Batch 1:  Loss:     0.6826 Accuracy: 0.636600
+    Epoch 23, CIFAR-10 Batch 2:  Loss:     0.6165 Accuracy: 0.618600
+    Epoch 23, CIFAR-10 Batch 3:  Loss:     0.5737 Accuracy: 0.635000
+    Epoch 23, CIFAR-10 Batch 4:  Loss:     0.5434 Accuracy: 0.642200
+    Epoch 23, CIFAR-10 Batch 5:  Loss:     0.5518 Accuracy: 0.649200
+    Epoch 24, CIFAR-10 Batch 1:  Loss:     0.6363 Accuracy: 0.640800
+    Epoch 24, CIFAR-10 Batch 2:  Loss:     0.6168 Accuracy: 0.629000
+    Epoch 24, CIFAR-10 Batch 3:  Loss:     0.5549 Accuracy: 0.640000
+    Epoch 24, CIFAR-10 Batch 4:  Loss:     0.5317 Accuracy: 0.648400
+    Epoch 24, CIFAR-10 Batch 5:  Loss:     0.5158 Accuracy: 0.651000
+    Epoch 25, CIFAR-10 Batch 1:  Loss:     0.6413 Accuracy: 0.644400
+    Epoch 25, CIFAR-10 Batch 2:  Loss:     0.5692 Accuracy: 0.630200
+    Epoch 25, CIFAR-10 Batch 3:  Loss:     0.5226 Accuracy: 0.634400
+    Epoch 25, CIFAR-10 Batch 4:  Loss:     0.5308 Accuracy: 0.640800
+    Epoch 25, CIFAR-10 Batch 5:  Loss:     0.5221 Accuracy: 0.646800
+    Epoch 26, CIFAR-10 Batch 1:  Loss:     0.5999 Accuracy: 0.644200
+    Epoch 26, CIFAR-10 Batch 2:  Loss:     0.5926 Accuracy: 0.629800
+    Epoch 26, CIFAR-10 Batch 3:  Loss:     0.5151 Accuracy: 0.640200
+    Epoch 26, CIFAR-10 Batch 4:  Loss:     0.5414 Accuracy: 0.638400
+    Epoch 26, CIFAR-10 Batch 5:  Loss:     0.4832 Accuracy: 0.642400
+    Epoch 27, CIFAR-10 Batch 1:  Loss:     0.6161 Accuracy: 0.643400
+    Epoch 27, CIFAR-10 Batch 2:  Loss:     0.5439 Accuracy: 0.634800
+    Epoch 27, CIFAR-10 Batch 3:  Loss:     0.5081 Accuracy: 0.641200
+    Epoch 27, CIFAR-10 Batch 4:  Loss:     0.5201 Accuracy: 0.638200
+    Epoch 27, CIFAR-10 Batch 5:  Loss:     0.4774 Accuracy: 0.645800
+    Epoch 28, CIFAR-10 Batch 1:  Loss:     0.6055 Accuracy: 0.650800
+    Epoch 28, CIFAR-10 Batch 2:  Loss:     0.5674 Accuracy: 0.632200
+    Epoch 28, CIFAR-10 Batch 3:  Loss:     0.5133 Accuracy: 0.631600
+    Epoch 28, CIFAR-10 Batch 4:  Loss:     0.4827 Accuracy: 0.643200
+    Epoch 28, CIFAR-10 Batch 5:  Loss:     0.4355 Accuracy: 0.644600
+    Epoch 29, CIFAR-10 Batch 1:  Loss:     0.5991 Accuracy: 0.637400
+    Epoch 29, CIFAR-10 Batch 2:  Loss:     0.5373 Accuracy: 0.635400
+    Epoch 29, CIFAR-10 Batch 3:  Loss:     0.4676 Accuracy: 0.647200
+    Epoch 29, CIFAR-10 Batch 4:  Loss:     0.4807 Accuracy: 0.635000
+    Epoch 29, CIFAR-10 Batch 5:  Loss:     0.4621 Accuracy: 0.638800
+    Epoch 30, CIFAR-10 Batch 1:  Loss:     0.5536 Accuracy: 0.648400
+    Epoch 30, CIFAR-10 Batch 2:  Loss:     0.5118 Accuracy: 0.640400
+    Epoch 30, CIFAR-10 Batch 3:  Loss:     0.4551 Accuracy: 0.642400
+    Epoch 30, CIFAR-10 Batch 4:  Loss:     0.4755 Accuracy: 0.633200
+    Epoch 30, CIFAR-10 Batch 5:  Loss:     0.4146 Accuracy: 0.650000
     
 
 # Checkpoint
@@ -865,7 +865,7 @@ test_model()
 ```
 
     INFO:tensorflow:Restoring parameters from ./image_classification
-    Testing Accuracy: 0.10006893388926982
+    Testing Accuracy: 0.6460707724094391
     
     
 
