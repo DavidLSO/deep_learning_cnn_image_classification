@@ -55,7 +55,6 @@ def normalize(x):
     : x: List of image data.  The image shape is (32, 32, 3)
     : return: Numpy array of normalize data
     """
-    # TODO: Implement Function
     return np.array((x - np.min(x)) / (np.max(x) - np.min(x)))
 
 
@@ -71,7 +70,6 @@ def one_hot_encode(x):
     : x: List of sample Labels
     : return: Numpy array of one-hot encoded labels
     """
-    # TODO: Implement Function
     one_hot = np.zeros(shape=(len(x), 10))
     for i in range(len(x)):
         for j in range(10):
@@ -109,7 +107,6 @@ def neural_net_image_input(image_shape):
     : image_shape: Shape of the images
     : return: Tensor for image input.
     """
-    # TODO: Implement Function
     return tf.placeholder(tf.float32, shape=[None, *image_shape], name="x")
 
 
@@ -119,7 +116,6 @@ def neural_net_label_input(n_classes):
     : n_classes: Number of classes
     : return: Tensor for label input.
     """
-    # TODO: Implement Function
     return tf.placeholder(tf.float32, shape=[None, n_classes], name='y')
 
 
@@ -128,7 +124,6 @@ def neural_net_keep_prob_input():
     Return a Tensor for keep probability
     : return: Tensor for keep probability.
     """
-    # TODO: Implement Function
     return tf.placeholder(tf.float32, name='keep_prob')
 
 
@@ -152,7 +147,6 @@ def conv2d_maxpool(x_tensor, conv_num_outputs, conv_ksize, conv_strides, pool_ks
     :param pool_strides: Stride 2-D Tuple for pool
     : return: A tensor that represents convolution and max pooling of x_tensor
     """
-    # TODO: Implement Function
     input_channel_depth = int(x_tensor.get_shape()[3])
     filter_weights = tf.Variable(tf.truncated_normal([*conv_ksize, input_channel_depth,
                                                       conv_num_outputs], dtype=tf.float32))
@@ -176,7 +170,6 @@ def flatten(x_tensor):
     : x_tensor: A tensor of size (Batch Size, ...), where ... are the image dimensions.
     : return: A tensor of size (Batch Size, Flattened Image Size).
     """
-    # TODO: Implement Function
     return tf.contrib.layers.flatten(x_tensor)
 
 
@@ -193,7 +186,6 @@ def fully_conn(x_tensor, num_outputs):
     : num_outputs: The number of output that the new tensor should be.
     : return: A 2-D tensor where the second dimension is num_outputs.
     """
-    # TODO: Implement Function
     return tf.contrib.layers.fully_connected(inputs=x_tensor, num_outputs=num_outputs)
 
 
@@ -210,7 +202,6 @@ def output(x_tensor, num_outputs):
     : num_outputs: The number of output that the new tensor should be.
     : return: A 2-D tensor where the second dimension is num_outputs.
     """
-    # TODO: Implement Function
     return tf.layers.dense(inputs=x_tensor, units=num_outputs)
 
 
@@ -227,7 +218,6 @@ def conv_net(x, keep_prob):
     : keep_prob: Placeholder tensor that hold dropout keep probability.
     : return: Tensor that represents logits
     """
-    # TODO: Apply 1, 2, or 3 Convolution and Max Pool layers
     #    Play around with different number of outputs, kernel size and stride
     # Function Definition from Above:
     x_tensor = x
@@ -238,19 +228,16 @@ def conv_net(x, keep_prob):
     pool_strides = (2, 2)
     conv2d_layer = conv2d_maxpool(x_tensor, conv_num_outputs, conv_ksize, conv_strides, pool_ksize, pool_strides)
 
-    # TODO: Apply a Flatten Layer
     # Function Definition from Above:
     # flatten_layer = flatten(x_tensor)
     flatten_layer = flatten(conv2d_layer)
 
-    # TODO: Apply 1, 2, or 3 Fully Connected Layers
     #    Play around with different number of outputs
     # Function Definition from Above:
     num_outputs = 10
     fully_conn_layer = fully_conn(flatten_layer, 1000)
     fully_conn_layer = tf.nn.dropout(fully_conn_layer, keep_prob)
 
-    # TODO: Apply an Output Layer
     return output(fully_conn_layer, num_outputs)
 
 
@@ -296,7 +283,6 @@ def train_neural_network(session, optimizer, keep_probability, feature_batch, la
     : feature_batch: Batch of Numpy image data
     : label_batch: Batch of Numpy label data
     """
-    # TODO: Implement Function
     session.run(optimizer, feed_dict={x: feature_batch, y: label_batch, keep_prob: keep_probability})
 
 
@@ -315,13 +301,11 @@ def print_stats(session, feature_batch, label_batch, cost, accuracy):
     : cost: TensorFlow cost function
     : accuracy: TensorFlow accuracy function
     """
-    # TODO: Implement Function
     loss = session.run(cost, feed_dict={x: feature_batch, y: label_batch, keep_prob: 1.0})
     valid_acc = session.run(accuracy, feed_dict={x: valid_features, y: valid_labels, keep_prob: 1.0})
     print('Loss: {:>10.4f} Accuracy: {:.6f}'.format(loss, valid_acc))
 
 
-# TODO: Tune Parameters
 epochs = 30
 batch_size = 512
 keep_probability = 0.8
